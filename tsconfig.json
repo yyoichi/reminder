@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "charset": "utf-8",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "strict": true,
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react",
+    "typeRoots": ["types", "node_modules/@types"]
+  }
+}
