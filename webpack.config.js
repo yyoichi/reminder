@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -8,7 +9,7 @@ module.exports = {
     background: path.join(__dirname, 'src/background/index.ts')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'extensions'),
     filename: '[name].js'
   },
   mode: 'production',
@@ -39,6 +40,9 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/browserActions/index.html')
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: path.join(__dirname, 'src/manifest.json'), to: path.join(__dirname, 'extensions/manifest.json') }
+    ])
   ]
 };
