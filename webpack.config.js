@@ -39,7 +39,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/browserActions/index.html')
+      template: path.join(__dirname, 'src/browserActions/index.html'),
+      inject: false
     }),
     new CopyWebpackPlugin([
       { from: path.join(__dirname, 'src/manifest.json'), to: path.join(__dirname, 'extensions/manifest.json') }
